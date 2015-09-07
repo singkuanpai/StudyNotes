@@ -36,7 +36,7 @@ git将在目录下创建一个隐藏目录（.git），这个目录就是git用�
 
 ### 使用git管理项目
 
-现在我们可以开始使用git管理我们的项目了，我们的项目非常简单，只包含3个文件：README、__init__.py和encoder.py。我们将三个文件复制到Python-XML2Dict目录并将其纳入git管理：
+现在我们可以开始使用git管理我们的项目：
 
 #cp /d/mygit/* .
 ```
@@ -47,8 +47,8 @@ git add命令可以将参数指定的文件添加到git仓库索引中，如果�
 
 git commit命令才是真正的将文件添加到git仓库中去，-m选项允许在命令行后直接给出每次添加的简短说明.
 ```
-git remote add origin git@github.com:XXX/XXX.git
+git remote add origin git@github.com:singkuanpai/StudyNotes.git
 git push -u origin master 
 ```
 //把本地 master 分支 推送到 服务器的master分支上，如果服务器没有此分支，就 新建 此分支。这也是 在服务器上新建分支的一种方法
-这个git@github.com:XXX/XXX.git就是上面创建项目是生成的地址。现在打开你的项目网址，你就可以发现你的代码已经展示出来了。
+这个git@github.com:singkuanpai/StudyNotes.git就是上面创建项目是生成的地址。现在打开你的项目网址，你就可以发现你的代码已经展示出来了。
