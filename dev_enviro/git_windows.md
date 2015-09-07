@@ -37,9 +37,8 @@ git将在目录下创建一个隐藏目录（.git），这个目录就是git用�
 ### 使用git管理项目
 
 现在我们可以开始使用git管理我们的项目：
-
-cp /d/mygit/* .
 ```
+cp /d/mygit
 git add README 
 git commit -m "这是我们第一次初始化项目"
 
@@ -55,28 +54,51 @@ git push -u origin master
 ### git 常用命令
 说明/备注	命令	备注
 保存更新	git add [-i]	-i 逐个确认
+
 检查更新	git status	
+
 提交更新	git commit [-a] -m "<更新说明>"	-a 包含增删 -m 说明信息
+
 克隆到本地	git clone <git地址>	
+
 远端抓取	git fetch	
+
 与本地当前branch合并	git merge	
+
 抓取并合并	git pull [<远端别名>] [<远端branch>] 相当于 git fetch + git merge
+
 推送到远端	git push [-f] [<远端别名>] [<远端branch>] -f 强制覆盖
+
 设置一个远端别名	git remote add <别名> <git地址>	
+
 列出远端	git remote -v	-v 详细信息
+
 查看远端信息	git remote show <远端别名>	
+
 重命名远端	git remote rename <远端别名> <新远端别名>
+
 删除远端	git remote rm <远端别名>	
+
 更新branch列表	git remote update [<远端别名>]	
+
 列出branch	git branch [-r] [-a]	-r 远端 -a 全部
+
 新建branch	git branch <branch名>	
+
 切换branch	git checkout <branch名>	
+
 创建本地branch对应远端branch	git checkout -b <本地branch> -t <远端别名>/<远端branch> -b 新建branch；-t 绑定远端branch
+
 设置HTTP代理	git config --global http.proxy "<HTTP代理>"
+
 恢复默认	Win系统编辑 %userprofile%\.gitconfig 文件；Linux系统编辑 ~/.gitconfig 文件。
+
 设置电子邮件	git config --global user.email "<电子邮件>"
+
 设置用户名	git config --global user.name "<用户名>"
+
 查看标签(tag)	git tag [--list]
+
 打包、快照(snapshot)	git archive [--prefix=<前缀路径>/] -o <文件名及格式> <branch或标签> --prefix 指定前缀路径；格式可以是 zip, tar
 
 ### Github协同流程：
