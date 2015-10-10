@@ -25,6 +25,7 @@ git push origin master
 git要求使用者必须提供自己的身份标识，为此我们需要在git bash中执行以下命令：
 
 git config --global user.name 'yourname'
+
 git config --global user.email youname@gmail.com
 
 选择git仓库目录,建立项目并初始化git仓库
