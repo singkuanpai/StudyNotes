@@ -60,7 +60,9 @@ git push -u origin master
 
 提交更新	git commit [-a] -m "<更新说明>"	-a 包含增删 -m 说明信息
 
-克隆到本地	git clone <git地址>	
+克隆到本地	git clone   git@github.com:singkuanpai/StudyNotes.git
+
+删除文件    git rm -r  git@github.com:singkuanpai/folder
 
 远端抓取	git fetch	
 
@@ -70,7 +72,7 @@ git push -u origin master
 
 推送到远端	git push [-f] [<远端别名>] [<远端branch>] -f 强制覆盖
 
-设置一个远端别名	git remote add <别名> <git地址>	
+设置一个远端别名	git remote add 别名 git地址	
 
 列出远端	git remote -v	-v 详细信息
 
@@ -84,9 +86,9 @@ git push -u origin master
 
 列出branch	git branch [-r] [-a]	-r 远端 -a 全部
 
-新建branch	git branch <branch名>	
+新建branch	git branch branch名
 
-切换branch	git checkout <branch名>	
+切换branch	git checkout branch名
 
 创建本地branch对应远端branch	git checkout -b <本地branch> -t <远端别名>/<远端branch> -b 新建branch；-t 绑定远端branch
 
@@ -100,7 +102,7 @@ git push -u origin master
 
 查看标签(tag)	git tag [--list]
 
-打包、快照(snapshot)	git archive [--prefix=<前缀路径>/] -o <文件名及格式> <branch或标签> --prefix 指定前缀路径；格式可以是 zip, tar
+打包、快照(snapshot)	git archive [--prefix=<前缀路径>/] -o <文件名及格式> branch或标签 --prefix 指定前缀路径；格式可以是 zip, tar
 
 ### Github协同流程：
 fork给自己 → clone到本地 → coding → push回自己 → github上提出Pull Request即可
