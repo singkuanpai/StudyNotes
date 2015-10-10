@@ -101,32 +101,32 @@ Ctrl+Alt+O：在浏览器中预览
 Ctrl+Alt+X：输出为HTML文件  
 Ctrl+Alt+C：复制为HTML文件  
 
-* Sublime Text添加插入带当前时间说明
+### 5.Sublime Text添加插入带当前时间说明
 
-1. 创建插件：
+1. 创建插件
 
 Tools → New Plugin:
 
-import datetime
-import sublime_plugin
-class AddCurrentTimeCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        self.view.run_command("insert_snippet", 
-            {
-                "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
-            }
-        )
-保存为Sublime Text 2\Packages\User\addCurrentTime.py
+import datetime  
+import sublime_plugin  
+class AddCurrentTimeCommand(sublime_plugin.TextCommand):  
+    def run(self, edit):  
+        self.view.run_command("insert_snippet",   
+            {  
+                "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")   
+            }  
+        )  
+保存为Sublime Text 2\Packages\User\addCurrentTime.py  
 
-2. 创建快捷键：
+2. 创建快捷键   
 
-Preference → Key Bindings - User:
+Preference → Key Bindings - User:  
 
-[
-    {
-        "command": "add_current_time",
-        "keys": [
-            "ctrl+d"
-        ]
-    }
-]
+[  
+    {  
+        "command": "add_current_time",  
+        "keys": [  
+            "ctrl+d"  
+        ]  
+    }  
+]  
