@@ -19,21 +19,21 @@ import  urllib2,os;pf='Package Control.sublime-package';ipp=sublime.installed_pa
 ```
 
 ### 2.包安装和移除
-安装：热键CTRL+SHIFT+P调出Package Control ，查找install package ，输入package
-移除：热键CTRL+SHIFT+P调出Package Control ，查找remove package ，输入package
+安装：热键CTRL+SHIFT+P调出Package Control ，查找install package ，输入package  
+移除：热键CTRL+SHIFT+P调出Package Control ，查找remove package ，输入package  
 查看：按ctrl+shift+p，输入package，选择list packages，就看到了。或者直接查看Installed Packages目录。Preferences->Browse Packages。
 
 
 ### 3.插件列表：
-markdown preview
-html/css/javascript prettify:需要安装nodejs
-BracketHighlighter：高亮显示 “” [] {} 等等 
-SideBarEnhancements:侧边栏增强
-Jedi：python自动补全
-Alignment:对齐
-Tomorrow Color Scheme:主题
-Theme-Argonaut:主题
-SublimeCodeIntel:自动补全
+markdown preview  
+html/css/javascript prettify:需要安装nodejs  
+BracketHighlighter：高亮显示 “” [] {} 等等  
+SideBarEnhancements:侧边栏增强  
+Jedi：python自动补全  
+Alignment:对齐  
+Tomorrow Color Scheme:主题  
+Theme-Argonaut:主题  
+SublimeCodeIntel:自动补全  
 
 SublimeTmpl 快速生成文件模板
 ConvertToUTF8：国人必备啊。解决中文问题  
@@ -91,12 +91,42 @@ Markdown Preview较常用的功能是preview in browser和Export HTML in Sublime
 还可以使用Pandoc将markdown文件转为pdf
 方法如下：安装pandoc、安装MiKTex
 
-1.如果markdown文件中不包含中文字符，可直接使用下面命令转换：
-pandoc infile.md -o outfile.pdf
-2.如果有中文字符，则要先将markdown文档的编码方式改为utf-8，编译pandoc默认的latex引擎是pdflatex，不支持中文，可以手动更改编译用的引擎为xelatex，使用下面命令：
+1.如果markdown文件中不包含中文字符，可直接使用下面命令转换：  
+pandoc infile.md -o outfile.pdf  
+2.如果有中文字符，则要先将markdown文档的编码方式改为utf-8，编译pandoc默认的latex引擎是pdflatex，不支持中文，可以手动更改编译用的引擎为xelatex，使用下面命令：  
 pandoc infile.md -o outfile.pdf --latex-engine=xelatex
 
-在Sublime Text 2中使用命令：
-Ctrl+Alt+O：在浏览器中预览
-Ctrl+Alt+X：输出为HTML文件
-Ctrl+Alt+C：复制为HTML文件
+在Sublime Text 2中使用命令：  
+Ctrl+Alt+O：在浏览器中预览  
+Ctrl+Alt+X：输出为HTML文件  
+Ctrl+Alt+C：复制为HTML文件  
+
+* Sublime Text添加插入带当前时间说明
+
+1. 创建插件：
+
+Tools → New Plugin:
+
+import datetime
+import sublime_plugin
+class AddCurrentTimeCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.run_command("insert_snippet", 
+            {
+                "contents": "%s" % datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") 
+            }
+        )
+保存为Sublime Text 2\Packages\User\addCurrentTime.py
+
+2. 创建快捷键：
+
+Preference → Key Bindings - User:
+
+[
+    {
+        "command": "add_current_time",
+        "keys": [
+            "ctrl+d"
+        ]
+    }
+]
